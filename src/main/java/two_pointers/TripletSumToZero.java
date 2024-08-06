@@ -21,6 +21,7 @@ public class TripletSumToZero {
 
 		for(int i=0; i< nums.length - 2; i++) {
 			
+			// avoid processing the duplicate numbers
 			if(i > 0 && nums[i] == nums[i-1])
 				continue;
 			
@@ -42,10 +43,10 @@ public class TripletSumToZero {
 					start++;
 					end--;
 					
-					while(start < end && nums[start] == nums[start - 1])
+					while(start < end && nums[start] == nums[start - 1])  // increment start further till we find non duplicate number
 						start++;
 					
-					while(end > start && nums[end] == nums[end + 1])
+					while(end > start && nums[end] == nums[end + 1]) // decrement end further till we find non duplicate number
 						end--;
 					
 				} else if(targetSum > currentSum) {
